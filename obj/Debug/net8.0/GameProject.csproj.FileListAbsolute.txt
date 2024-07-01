@@ -24,3 +24,9 @@
 /Users/kutayakpinar/Desktop/dotnetdeneme/GameProject/obj/Debug/net8.0/GameProject.genruntimeconfig.cache
 /Users/kutayakpinar/Desktop/dotnetdeneme/GameProject/obj/Debug/net8.0/ref/GameProject.dll
 /Users/kutayakpinar/Desktop/dotnetdeneme/GameProject/obj/Debug/net8.0/GameProject.sourcelink.json
+/Users/kutayakpinar/Desktop/dotnetdeneme/GameProject/bin/Debug/net8.0/Microsoft.OpenApi.dll
+/Users/kutayakpinar/Desktop/dotnetdeneme/GameProject/bin/Debug/net8.0/MinimalApis.Extensions.dll
+/Users/kutayakpinar/Desktop/dotnetdeneme/GameProject/bin/Debug/net8.0/MiniValidation.dll
+/Users/kutayakpinar/Desktop/dotnetdeneme/GameProject/obj/Debug/net8.0/GameProject.csproj.AssemblyReference.cache
+/Users/kutayakpinar/Desktop/dotnetdeneme/GameProject/obj/Debug/net8.0/GameProject.MvcApplicationPartsAssemblyInfo.cs
+/Users/kutayakpinar/Desktop/dotnetdeneme/GameProject/obj/Debug/net8.0/GameProj.B6B480F2.Up2Date
