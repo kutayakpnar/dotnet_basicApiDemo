@@ -23,3 +23,4 @@
 /Users/kutayakpinar/Desktop/dotnetdeneme/GameProject/obj/Debug/net8.0/GameProject.pdb
 /Users/kutayakpinar/Desktop/dotnetdeneme/GameProject/obj/Debug/net8.0/GameProject.genruntimeconfig.cache
 /Users/kutayakpinar/Desktop/dotnetdeneme/GameProject/obj/Debug/net8.0/ref/GameProject.dll
+/Users/kutayakpinar/Desktop/dotnetdeneme/GameProject/obj/Debug/net8.0/GameProject.sourcelink.json

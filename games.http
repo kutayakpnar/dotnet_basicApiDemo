@@ -1,1 +1,19 @@
-GET http://localhost:5008/games/3
+GET http://localhost:5008/games
+
+###
+
+GET http://localhost:5008/getGamesById/3
+
+###
+
+POST http://localhost:5008/games
+Content-Type: application/json
+
+{
+    "Name":"Game 4",
+    "Genre":"Kids",
+    "price":19.99,
+    "ReleseDate":"2011-11-8"
+}
+
+

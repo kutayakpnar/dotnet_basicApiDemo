@@ -27,9 +27,23 @@ List<GameDto> games = [
 app.MapGet("games",()=> games);
 
 //Get game by its id
-app.MapGet("games/{id}", (int id)=>{
+app.MapGet("getGamesById/{id}", (int id)=>{
     return games.Find(game => game.Id==id);
-    
+}).WithName("getGame");
+
+//POST  /games
+app.MapPost("games",(createGameDto newGame)=> {
+    GameDto game= new (
+        games.Count+1,
+        newGame.Name,
+        newGame.Genre,
+        newGame.price,
+        newGame.ReleaseDate
+
+    );
+    games.Add(game);
+
+    return Results.CreatedAtRoute("getGame",new{id=game.Id},game);
 
 });
 
