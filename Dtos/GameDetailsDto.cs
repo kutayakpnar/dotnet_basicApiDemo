@@ -1,9 +1,9 @@
 ﻿namespace GameProject.Dtos;
 
-public record class GameDto(
+public record class GameDetailsDto(
     int Id,
     string Name,
-    string Genre,
+    int GenreId,
     decimal price,
     DateOnly ReleaseDate
     );

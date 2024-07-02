@@ -7,7 +7,7 @@ namespace GameProject.Endpoints;
 
 public static class GamesEndpoints
 {
-    private static readonly List<GameDto> games = [
+    private static readonly List<GameSummaryDto> games = [
     new (1,
     "Game 1",
     "Fighting",
@@ -35,10 +35,12 @@ public static class GamesEndpoints
         group.MapGet("/", () => games);
 
         //Get game by its id
-        group.MapGet("/{id}", (int id) =>
+        group.MapGet("/{id}", (int id,GameStoreContext dbContext) =>
         {
 
-            GameDto? game = games.Find(game => game.Id == id);
+            //GameDto? game = games.Find(game => game.Id == id); change this to below for db operations
+            Game? game=dbContext.Games.Find(id);
+
 
             return game is null ? Results.NotFound() : Results.Ok(game);
 
@@ -65,7 +67,7 @@ public static class GamesEndpoints
 
 
             return Results.CreatedAtRoute("getGame", new { id = game.Id }, 
-            game.ToDto());
+            game.ToGameDetailsDto());
 
         });
 
@@ -73,7 +75,7 @@ public static class GamesEndpoints
         group.MapPut("/{id}", (int id, UpdateGameDto updatedGame) =>
         {
             var index = games.FindIndex(game => game.Id == id);
-            games[index] = new GameDto(
+            games[index] = new GameSummaryDto(
                 id,
                 updatedGame.Name,
                 updatedGame.Genre,
