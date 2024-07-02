@@ -1,6 +1,7 @@
 ﻿using GameProject.Data;
 using GameProject.Dtos;
 using GameProject.Entities;
+using GameProject.Mapping;
 
 namespace GameProject.Endpoints;
 
@@ -49,30 +50,22 @@ public static class GamesEndpoints
         {
             
 
-            Game game = new(){
-                Name=newGame.Name,
-                Genre=dbContext.Genres.Find(newGame.GenreId),
-                GenreId=newGame.GenreId,
-                Price=newGame.price,
-                ReleaseDate=newGame.ReleaseDate
-            };
+            Game game = newGame.ToEntity();
+            game.Genre=dbContext.Genres.Find(newGame.GenreId);
+
+
             dbContext.Games.Add(game);
             dbContext.SaveChanges();
 
-            GameDto gameDto = new(
-                game.Id,
-                game.Name,
-                game.Genre!.Name, // ı assure it cannot be null
-                game.Price,
-                game.ReleaseDate
+            //GameDto gameDto = game.ToDto();
 
-            );
                
             
 
 
 
-            return Results.CreatedAtRoute("getGame", new { id = game.Id }, gameDto);
+            return Results.CreatedAtRoute("getGame", new { id = game.Id }, 
+            game.ToDto());
 
         });
 
