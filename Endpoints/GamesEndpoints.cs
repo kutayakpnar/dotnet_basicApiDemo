@@ -42,7 +42,7 @@ public static class GamesEndpoints
             Game? game=dbContext.Games.Find(id);
 
 
-            return game is null ? Results.NotFound() : Results.Ok(game);
+            return game is null ? Results.NotFound() : Results.Ok(game.ToGameDetailsDto);
 
 
         }).WithName("getGame");
